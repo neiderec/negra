@@ -2,254 +2,173 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro al Taller de Desarrollo Web</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f4f8;
-            margin: 0;
-            padding: 30px;
-        }
-
-        .contenedor {
-            width: 80%;
-            max-width: 900px;
-            margin: auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #ccc;
-        }
-
-        h1 {
-            text-align: center;
-            color: #1f3c88;
-        }
-
-        p {
-            text-align: center;
-            color: #555;
-        }
-
-        fieldset {
-            margin-bottom: 25px;
-            padding: 20px;
-            border: 2px solid #1f3c88;
-            border-radius: 10px;
-        }
-
-        legend {
-            font-weight: bold;
-            color: #1f3c88;
-            padding: 0 10px;
-        }
-
-        label {
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 6px;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="number"],
-        input[type="date"],
-        input[type="time"],
-        input[type="url"],
-        select,
-        textarea {
-            width: 95%;
-            padding: 9px;
-            margin-bottom: 15px;
-            border: 1px solid #999;
-            border-radius: 6px;
-            font-size: 14px;
-        }
-
-        input[type="color"] {
-            width: 80px;
-            height: 35px;
-            border: none;
-            margin-bottom: 15px;
-        }
-
-        input[type="range"] {
-            width: 60%;
-        }
-
-        .opciones label {
-            font-weight: normal;
-            margin-right: 15px;
-        }
-
-        .botones {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        button {
-            padding: 12px 25px;
-            margin: 8px;
-            border: none;
-            border-radius: 8px;
-            background-color: #1f3c88;
-            color: white;
-            font-size: 15px;
-            cursor: pointer;
-        }
-
-        button[type="reset"] {
-            background-color: #777;
-        }
-    </style>
+    <title>Formulario de inscripción</title>
 </head>
 <body>
 
-    <div class="contenedor">
+    <h1>Inscripción al taller básico de creación de páginas web</h1>
 
-        <h1>Registro al Taller de Desarrollo Web</h1>
-        <p>Complete el formulario para reservar su cupo en el taller.</p>
+    <form action="#" method="post">
 
-        <form action="#" method="post">
+        <fieldset>
+            <legend>Datos personales</legend>
 
-            <fieldset>
-                <legend>Información personal</legend>
+            <label for="nombre">Nombres y apellidos:</label>
+            <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="80" placeholder="Escriba sus nombres y apellidos">
+            <br><br>
 
-                <label for="nombre">Nombre completo:</label>
-                <input type="text" id="nombre" name="nombre" required minlength="4" maxlength="80" placeholder="Ejemplo: Neider Jahir">
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
+            <br><br>
 
-                <label for="correo">Correo electrónico:</label>
-                <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
+            <label for="telefono">Número de teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required placeholder="0999999999" pattern="[0-9]{10}">
+            <br><br>
 
-                <label for="telefono">Número de teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required placeholder="0999999999" pattern="[0-9]{10}">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required min="15" max="80">
+            <br><br>
 
-                <label for="edad">Edad:</label>
-                <input type="number" id="edad" name="edad" required min="15" max="80">
+            <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+        </fieldset>
 
-                <label for="nacimiento">Fecha de nacimiento:</label>
-                <input type="date" id="nacimiento" name="nacimiento" required>
-            </fieldset>
+        <br>
 
-            <fieldset>
-                <legend>Información académica</legend>
+        <fieldset>
+            <legend>Datos académicos</legend>
 
-                <label for="curso">Carrera, curso o especialidad:</label>
-                <input type="text" id="curso" name="curso" required placeholder="Ejemplo: Informática">
+            <label for="carrera">Carrera o curso:</label>
+            <input type="text" id="carrera" name="carrera" required placeholder="Ejemplo: Desarrollo de software">
+            <br><br>
 
-                <label for="nivel">Nivel académico:</label>
-                <select id="nivel" name="nivel" required>
-                    <option value="">Seleccione una opción</option>
-                    <option value="bachillerato">Bachillerato</option>
-                    <option value="tecnico">Técnico</option>
-                    <option value="tecnologico">Tecnológico</option>
-                    <option value="universitario">Universitario</option>
-                </select>
+            <label for="nivel">Nivel académico:</label>
+            <select id="nivel" name="nivel" required>
+                <option value="">Seleccione una opción</option>
+                <option value="bachillerato">Bachillerato</option>
+                <option value="tecnologico">Tecnológico</option>
+                <option value="universitario">Universitario</option>
+                <option value="otro">Otro</option>
+            </select>
+            <br><br>
 
-                <label for="institucion">Institución educativa:</label>
-                <input type="text" id="institucion" name="institucion" required placeholder="Nombre de la institución">
-            </fieldset>
+            <label for="institucion">Institución educativa:</label>
+            <input type="text" id="institucion" name="institucion" required placeholder="Ingrese el nombre de su colegio o instituto">
+        </fieldset>
 
-            <fieldset>
-                <legend>Preferencias del taller</legend>
+        <br>
 
-                <p>Modalidad del taller:</p>
+        <fieldset>
+            <legend>Preferencias del taller</legend>
 
-                <div class="opciones">
-                    <input type="radio" id="presencial" name="modalidad" value="presencial" required>
-                    <label for="presencial">Presencial</label>
+            <p>Modalidad del taller:</p>
 
-                    <input type="radio" id="virtual" name="modalidad" value="virtual">
-                    <label for="virtual">Virtual</label>
+            <input type="radio" id="presencial" name="modalidad" value="presencial" required>
+            <label for="presencial">Presencial</label>
 
-                    <input type="radio" id="hibrida" name="modalidad" value="hibrida">
-                    <label for="hibrida">Híbrida</label>
-                </div>
+            <input type="radio" id="virtual" name="modalidad" value="virtual">
+            <label for="virtual">Virtual</label>
 
-                <p>Temas de interés:</p>
+            <input type="radio" id="hibrida" name="modalidad" value="hibrida">
+            <label for="hibrida">Híbrida</label>
 
-                <div class="opciones">
-                    <input type="checkbox" id="html" name="temas" value="html">
-                    <label for="html">HTML</label>
+            <br><br>
 
-                    <input type="checkbox" id="formularios" name="temas" value="formularios">
-                    <label for="formularios">Formularios</label>
+            <p>Temas de interés:</p>
 
-                    <input type="checkbox" id="github" name="temas" value="github">
-                    <label for="github">GitHub</label>
+            <input type="checkbox" id="html" name="temas" value="html">
+            <label for="html">HTML</label>
 
-                    <input type="checkbox" id="paginas" name="temas" value="paginas">
-                    <label for="paginas">Páginas web</label>
-                </div>
+            <input type="checkbox" id="css" name="temas" value="css">
+            <label for="css">CSS</label>
 
-                <p>Nivel de conocimiento previo:</p>
+            <input type="checkbox" id="javascript" name="temas" value="javascript">
+            <label for="javascript">JavaScript</label>
 
-                <div class="opciones">
-                    <input type="radio" id="basico" name="conocimiento" value="basico" required>
-                    <label for="basico">Básico</label>
+            <input type="checkbox" id="github" name="temas" value="github">
+            <label for="github">GitHub</label>
 
-                    <input type="radio" id="intermedio" name="conocimiento" value="intermedio">
-                    <label for="intermedio">Intermedio</label>
+            <input type="checkbox" id="formularios" name="temas" value="formularios">
+            <label for="formularios">Formularios HTML</label>
 
-                    <input type="radio" id="avanzado" name="conocimiento" value="avanzado">
-                    <label for="avanzado">Avanzado</label>
-                </div>
+            <input type="checkbox" id="accesibilidad" name="temas" value="accesibilidad">
+            <label for="accesibilidad">Accesibilidad web</label>
 
-                <br>
+            <br><br>
 
-                <label for="color">Color favorito para el material del taller:</label>
-                <input type="color" id="color" name="color">
+            <p>Nivel de conocimiento previo:</p>
 
-                <br>
+            <input type="radio" id="basico" name="conocimiento" value="basico" required>
+            <label for="basico">Básico</label>
 
-                <label for="motivacion">Nivel de motivación:</label>
-                <input type="range" id="motivacion" name="motivacion" min="1" max="10" step="1">
-            </fieldset>
+            <input type="radio" id="intermedio" name="conocimiento" value="intermedio">
+            <label for="intermedio">Intermedio</label>
 
-            <fieldset>
-                <legend>Disponibilidad horaria</legend>
+            <input type="radio" id="avanzado" name="conocimiento" value="avanzado">
+            <label for="avanzado">Avanzado</label>
 
-                <label for="fecha_inicio">Fecha preferida para iniciar:</label>
-                <input type="date" id="fecha_inicio" name="fecha_inicio" required>
+            <br><br>
 
-                <label for="hora">Hora disponible:</label>
-                <input type="time" id="hora" name="hora" required>
+            <label for="color">Color favorito para personalizar el taller:</label>
+            <input type="color" id="color" name="color">
+            <br><br>
 
-                <label for="jornada">Jornada preferida:</label>
-                <select id="jornada" name="jornada" required>
-                    <option value="">Seleccione una jornada</option>
-                    <option value="manana">Mañana</option>
-                    <option value="tarde">Tarde</option>
-                    <option value="noche">Noche</option>
-                    <option value="fin_semana">Fin de semana</option>
-                </select>
-            </fieldset>
+            <label for="motivacion">Nivel de motivación:</label>
+            <input type="range" id="motivacion" name="motivacion" min="1" max="10" step="1">
+        </fieldset>
 
-            <fieldset>
-                <legend>Información adicional</legend>
+        <br>
 
-                <label for="archivo">Subir archivo de ejemplo:</label>
-                <input type="file" id="archivo" name="archivo">
+        <fieldset>
+            <legend>Disponibilidad</legend>
 
-                <br><br>
+            <label for="fecha_inicio">Fecha preferida para iniciar:</label>
+            <input type="date" id="fecha_inicio" name="fecha_inicio" required>
+            <br><br>
 
-                <label for="portafolio">Portafolio o perfil académico:</label>
-                <input type="url" id="portafolio" name="portafolio" placeholder="https://ejemplo.com">
+            <label for="hora">Hora disponible:</label>
+            <input type="time" id="hora" name="hora" required>
+            <br><br>
 
-                <label for="comentarios">Comentarios adicionales:</label>
-                <textarea id="comentarios" name="comentarios" rows="6" maxlength="350" placeholder="Escriba sus comentarios o expectativas del taller"></textarea>
-            </fieldset>
+            <label for="jornada">Jornada preferida:</label>
+            <select id="jornada" name="jornada" required>
+                <option value="">Seleccione una jornada</option>
+                <option value="manana">Mañana</option>
+                <option value="tarde">Tarde</option>
+                <option value="noche">Noche</option>
+            </select>
+        </fieldset>
 
-            <div class="botones">
-                <button type="submit">Enviar inscripción</button>
-                <button type="reset">Limpiar formulario</button>
-            </div>
+        <br>
 
-        </form>
+        <fieldset>
+            <legend>Información adicional</legend>
 
-    </div>
+            <label for="archivo">Subir archivo de ejemplo:</label>
+            <input type="file" id="archivo" name="archivo">
+            <br><br>
+
+            <label for="portafolio">Portafolio o perfil académico:</label>
+            <input type="url" id="portafolio" name="portafolio" placeholder="https://ejemplo.com">
+            <br><br>
+
+            <label for="comentarios">Comentarios adicionales:</label>
+            <br>
+            <textarea id="comentarios" name="comentarios" rows="5" cols="50" maxlength="300" placeholder="Escriba aquí sus comentarios"></textarea>
+
+            <br><br>
+
+            <label for="expectativas">¿Qué espera aprender en el taller?</label>
+            <br>
+            <textarea id="expectativas" name="expectativas" rows="4" cols="50" maxlength="250" placeholder="Escriba brevemente sus expectativas"></textarea>
+        </fieldset>
+
+        <br>
+
+        <button type="submit">Registrar participación</button>
+        <button type="reset">Borrar datos</button>
+
+    </form>
 
 </body>
 </html>
