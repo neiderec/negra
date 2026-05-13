@@ -2,159 +2,161 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Formulario de inscripción</title>
+    <title>Registro al curso de programación web</title>
 </head>
 <body>
 
-    <h1>Formulario de inscripción al taller de desarrollo web</h1>
+    <h1>Registro de participantes para el curso de programación web</h1>
+    <p>Complete el siguiente formulario para reservar su cupo en el taller.</p>
 
     <form action="#" method="post">
 
         <fieldset>
-            <legend>Datos personales</legend>
+            <legend>Información del estudiante</legend>
 
-            <label for="nombre">Nombres y apellidos:</label>
-            <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="80" placeholder="Ingrese su nombre completo">
+            <label for="nombre_completo">Nombre completo:</label>
+            <input type="text" id="nombre_completo" name="nombre_completo" required minlength="4" maxlength="70" placeholder="Ejemplo: Juan Pérez">
             <br><br>
 
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
+            <label for="email">Correo institucional o personal:</label>
+            <input type="email" id="email" name="email" required placeholder="usuario@correo.com">
             <br><br>
 
-            <label for="telefono">Número de teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" required placeholder="0999999999" pattern="[0-9]{10}">
+            <label for="celular">Celular:</label>
+            <input type="tel" id="celular" name="celular" required placeholder="0987654321" pattern="[0-9]{10}">
             <br><br>
 
-            <label for="edad">Edad:</label>
-            <input type="number" id="edad" name="edad" required min="15" max="80">
+            <label for="edad_estudiante">Edad:</label>
+            <input type="number" id="edad_estudiante" name="edad_estudiante" required min="14" max="65">
             <br><br>
 
-            <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+            <label for="nacimiento">Fecha de nacimiento:</label>
+            <input type="date" id="nacimiento" name="nacimiento">
         </fieldset>
 
         <br>
 
         <fieldset>
-            <legend>Datos académicos</legend>
+            <legend>Información académica</legend>
 
-            <label for="carrera">Carrera o curso:</label>
-            <input type="text" id="carrera" name="carrera" required placeholder="Ejemplo: Informática">
+            <label for="programa">Carrera, curso o especialidad:</label>
+            <input type="text" id="programa" name="programa" required placeholder="Ejemplo: Sistemas, Informática, Diseño">
             <br><br>
 
-            <label for="nivel">Nivel académico:</label>
-            <select id="nivel" name="nivel" required>
-                <option value="">Seleccione una opción</option>
+            <label for="grado">Nivel de estudios:</label>
+            <select id="grado" name="grado" required>
+                <option value="">Elija una opción</option>
+                <option value="secundaria">Secundaria</option>
                 <option value="bachillerato">Bachillerato</option>
-                <option value="tecnologico">Tecnológico</option>
-                <option value="universitario">Universitario</option>
-                <option value="otro">Otro</option>
+                <option value="tecnico">Técnico</option>
+                <option value="universidad">Universidad</option>
             </select>
             <br><br>
 
-            <label for="institucion">Institución educativa:</label>
-            <input type="text" id="institucion" name="institucion" required placeholder="Nombre de la institución">
+            <label for="centro_estudios">Nombre de la institución:</label>
+            <input type="text" id="centro_estudios" name="centro_estudios" maxlength="100" placeholder="Ingrese el nombre de su institución">
         </fieldset>
 
         <br>
 
         <fieldset>
-            <legend>Preferencias del taller</legend>
+            <legend>Datos del taller</legend>
 
-            <p>Modalidad del taller:</p>
+            <p>Tipo de asistencia:</p>
 
-            <input type="radio" id="presencial" name="modalidad" value="presencial" required>
-            <label for="presencial">Presencial</label>
+            <input type="radio" id="asistencia_presencial" name="tipo_asistencia" value="presencial" required>
+            <label for="asistencia_presencial">En el aula</label>
 
-            <input type="radio" id="virtual" name="modalidad" value="virtual">
-            <label for="virtual">Virtual</label>
+            <input type="radio" id="asistencia_virtual" name="tipo_asistencia" value="virtual">
+            <label for="asistencia_virtual">En línea</label>
 
-            <input type="radio" id="hibrida" name="modalidad" value="hibrida">
-            <label for="hibrida">Híbrida</label>
-
-            <br><br>
-
-            <p>Temas de interés:</p>
-
-            <input type="checkbox" id="html" name="temas" value="html">
-            <label for="html">HTML</label>
-
-            <input type="checkbox" id="css" name="temas" value="css">
-            <label for="css">CSS</label>
-
-            <input type="checkbox" id="javascript" name="temas" value="javascript">
-            <label for="javascript">JavaScript</label>
-
-            <input type="checkbox" id="github" name="temas" value="github">
-            <label for="github">GitHub</label>
+            <input type="radio" id="asistencia_mixta" name="tipo_asistencia" value="mixta">
+            <label for="asistencia_mixta">Mixta</label>
 
             <br><br>
 
-            <p>Nivel de conocimiento previo:</p>
+            <p>Contenidos que desea aprender:</p>
 
-            <input type="radio" id="basico" name="conocimiento" value="basico" required>
-            <label for="basico">Básico</label>
+            <input type="checkbox" id="tema_html" name="contenidos" value="html">
+            <label for="tema_html">Estructura HTML</label>
 
-            <input type="radio" id="intermedio" name="conocimiento" value="intermedio">
-            <label for="intermedio">Intermedio</label>
+            <input type="checkbox" id="tema_formularios" name="contenidos" value="formularios">
+            <label for="tema_formularios">Formularios web</label>
 
-            <input type="radio" id="avanzado" name="conocimiento" value="avanzado">
-            <label for="avanzado">Avanzado</label>
+            <input type="checkbox" id="tema_github" name="contenidos" value="github">
+            <label for="tema_github">Publicación en GitHub</label>
+
+            <input type="checkbox" id="tema_paginas" name="contenidos" value="paginas">
+            <label for="tema_paginas">Creación de páginas</label>
 
             <br><br>
 
-            <label for="color">Color favorito para personalizar el taller:</label>
-            <input type="color" id="color" name="color">
+            <p>Experiencia previa:</p>
+
+            <input type="radio" id="sin_experiencia" name="experiencia" value="ninguna" required>
+            <label for="sin_experiencia">Sin experiencia</label>
+
+            <input type="radio" id="experiencia_media" name="experiencia" value="media">
+            <label for="experiencia_media">Conocimientos básicos</label>
+
+            <input type="radio" id="experiencia_alta" name="experiencia" value="alta">
+            <label for="experiencia_alta">Conocimientos avanzados</label>
+
             <br><br>
 
-            <label for="motivacion">Nivel de motivación:</label>
-            <input type="range" id="motivacion" name="motivacion" min="1" max="10" step="1">
+            <label for="color_preferido">Color preferido para el material del curso:</label>
+            <input type="color" id="color_preferido" name="color_preferido">
+            <br><br>
+
+            <label for="interes">Nivel de interés en el taller:</label>
+            <input type="range" id="interes" name="interes" min="1" max="10" step="1">
         </fieldset>
 
         <br>
 
         <fieldset>
-            <legend>Disponibilidad</legend>
+            <legend>Horario disponible</legend>
 
-            <label for="fecha_inicio">Fecha preferida para iniciar:</label>
-            <input type="date" id="fecha_inicio" name="fecha_inicio" required>
+            <label for="inicio">Día preferido para iniciar:</label>
+            <input type="date" id="inicio" name="inicio" required>
             <br><br>
 
-            <label for="hora">Hora disponible:</label>
-            <input type="time" id="hora" name="hora" required>
+            <label for="hora_disponible">Hora en la que puede asistir:</label>
+            <input type="time" id="hora_disponible" name="hora_disponible" required>
             <br><br>
 
-            <label for="jornada">Jornada preferida:</label>
-            <select id="jornada" name="jornada" required>
-                <option value="">Seleccione una jornada</option>
-                <option value="manana">Mañana</option>
-                <option value="tarde">Tarde</option>
-                <option value="noche">Noche</option>
+            <label for="turno">Turno de preferencia:</label>
+            <select id="turno" name="turno" required>
+                <option value="">Seleccione un turno</option>
+                <option value="matutino">Matutino</option>
+                <option value="vespertino">Vespertino</option>
+                <option value="nocturno">Nocturno</option>
+                <option value="fin_semana">Fin de semana</option>
             </select>
         </fieldset>
 
         <br>
 
         <fieldset>
-            <legend>Información adicional</legend>
+            <legend>Documentos y observaciones</legend>
 
-            <label for="archivo">Subir archivo de ejemplo:</label>
-            <input type="file" id="archivo" name="archivo">
+            <label for="evidencia">Adjuntar archivo de prueba:</label>
+            <input type="file" id="evidencia" name="evidencia">
             <br><br>
 
-            <label for="portafolio">Portafolio o perfil académico:</label>
-            <input type="url" id="portafolio" name="portafolio" placeholder="https://ejemplo.com">
+            <label for="perfil">Enlace a perfil académico o portafolio:</label>
+            <input type="url" id="perfil" name="perfil" placeholder="https://miportafolio.com">
             <br><br>
 
-            <label for="comentarios">Comentarios adicionales:</label>
+            <label for="observaciones">Observaciones o expectativas del curso:</label>
             <br>
-            <textarea id="comentarios" name="comentarios" rows="5" cols="50" maxlength="300" placeholder="Escriba aquí sus comentarios"></textarea>
+            <textarea id="observaciones" name="observaciones" rows="6" cols="45" maxlength="350" placeholder="Escriba sus comentarios aquí"></textarea>
         </fieldset>
 
         <br>
 
-        <button type="submit">Enviar inscripción</button>
-        <button type="reset">Limpiar formulario</button>
+        <button type="submit">Registrar participante</button>
+        <button type="reset">Borrar datos</button>
 
     </form>
 
